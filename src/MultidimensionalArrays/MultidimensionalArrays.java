@@ -128,22 +128,9 @@ public class MultidimensionalArrays {
             }
         }
 
-        int[] lineup = new int[n * m];
-        int count = 0;
-
-        for (int i = 0; i < m; i++) {
-            for (int j = n - 1; j >= 0; j--) {
-                lineup[count] = input[j][i];
-                count++;
-            }
-        }
-
-        count = 0;
-
-        for (int i = 0; i < output.length; i++) {
-            for (int j = 0; j < output[i].length; j++) {
-                output[i][j] = lineup[count];
-                count++;
+        for (int i = 0; i < input[0].length; i++) {
+            for (int j = 0; j < input.length; j++) {
+                output[i][j] = input[input.length - j - 1][i];
             }
         }
 
