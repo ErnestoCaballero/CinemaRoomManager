@@ -101,5 +101,53 @@ public class MultidimensionalArrays {
         }
     }
 
+    /*
+    ROTATE A RECTANGLE ARRAY
+    Given a rectangle array n×m in size. Rotate it by 90 degrees clockwise, by recording the result into the
+    new array m×n in size.
+
+    Input data format
+
+    Input consists of the two numbers n and m, not exceeding 100, and then an array n×m in size.
+
+    Output data format
+
+    Output the resulting array. Separate numbers by a single space in the output.
+     */
+
+    static int[][] rotateRectangle() {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+        int[][] input = new int[n][m];
+        int[][] output = new int[m][n];
+
+        for (int i = 0; i < input.length; i++) {
+            for (int j = 0; j < input[i].length; j++) {
+                input[i][j] = scanner.nextInt();
+            }
+        }
+
+        int[] lineup = new int[n * m];
+        int count = 0;
+
+        for (int i = 0; i < m; i++) {
+            for (int j = n - 1; j >= 0; j--) {
+                lineup[count] = input[j][i];
+                count++;
+            }
+        }
+
+        count = 0;
+
+        for (int i = 0; i < output.length; i++) {
+            for (int j = 0; j < output[i].length; j++) {
+                output[i][j] = lineup[count];
+                count++;
+            }
+        }
+
+        return output;
+    }
 
 }
