@@ -18,7 +18,9 @@ public class MultidimensionalArrays {
         printTwoDimArray(twoDimArray);
 
         System.out.println();
-        System.out.println(isSymmetric(twoDimArray) ? "YES" : "NO");
+//        System.out.println(isSymmetric(twoDimArray) ? "YES" : "NO");
+
+        printTheThirdRow(twoDimArray);
 
     }
 
@@ -42,6 +44,12 @@ public class MultidimensionalArrays {
             System.out.println();
         }
      }
+
+    public static void printTheThirdRow(int[][] twoDimArray) {
+        for (int j = 0; j < twoDimArray[2].length; j++) {
+            System.out.print(twoDimArray[2][j] + " ");
+        }
+    }
 
 
 }
