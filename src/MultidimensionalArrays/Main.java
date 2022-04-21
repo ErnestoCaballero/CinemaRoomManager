@@ -39,8 +39,9 @@ public class Main {
 //        MultidimensionalArrays.printTwoDimArray(twoDimArray);
 
 //        MultidimensionalArrays.printMatrixDiagonals();
-        MultidimensionalArrays.swapMatrixColumn();
+//        MultidimensionalArrays.swapMatrixColumn();
 
+        MultidimensionalArrays.printStarFigure();
 
     }
 }
