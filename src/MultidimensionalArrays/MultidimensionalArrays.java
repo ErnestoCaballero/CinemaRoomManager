@@ -80,9 +80,9 @@ public class MultidimensionalArrays {
     }
 
     static void printTwoDimArray(int[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
+        for (int[] i : array) {
+            for (int j : i) {
+                System.out.print(j + " ");
             }
             System.out.println();
         }
@@ -135,6 +135,54 @@ public class MultidimensionalArrays {
         }
 
         return output;
+    }
+
+    static int[][] populateTwoDimArray() {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+        int[][] output = new int[n][m];
+
+        for (int i = 0; i < output.length; i++) {
+            for (int j = 0; j < output[i].length; j++) {
+                output[i][j] = scanner.nextInt();
+            }
+        }
+
+        return output;
+    }
+
+    /*
+    FIND CORNER
+    You need to implement printCorners method. It should print all corner elements of the twoDimArray in the
+    following order: left to right and top to bottom.
+
+    The elements must be separated by space and printed as an example below.
+
+    Input array:
+
+    1 0 2
+    0 0 0
+    3 0 4
+    Printed corners:
+
+    1 2
+    3 4
+    Notice, that you must always print 4 corners, for example:
+
+    Input array:
+
+    1
+    2
+    3
+    Printed corners:
+
+    1 1
+    3 3
+     */
+    static void printCorner(int[][] arr) {
+        System.out.print(arr[0][0] + " " + arr[0][arr[0].length - 1] + "\n");
+        System.out.println(arr[arr.length - 1][0] + " " + arr[arr.length - 1][arr[arr.length -1].length - 1]);
     }
 
 }
