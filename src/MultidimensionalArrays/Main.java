@@ -27,16 +27,18 @@ public class Main {
 //                {5, 6, 7, 8}
 //        };
 
-        int[][] twoDimArray = {
-                {1, 2, 3, 4},
-                {5, 6, 7, 8, 9}
-        };
+//        int[][] twoDimArray = {
+//                {1, 2, 3, 4},
+//                {5, 6, 7, 8, 9}
+//        };
+//
+//
+//        MultidimensionalArrays.printTwoDimArray(twoDimArray);
+//        System.out.println();
+//        MultidimensionalArrays.reverseElements(twoDimArray);
+//        MultidimensionalArrays.printTwoDimArray(twoDimArray);
 
-
-        MultidimensionalArrays.printTwoDimArray(twoDimArray);
-        System.out.println();
-        MultidimensionalArrays.reverseElements(twoDimArray);
-        MultidimensionalArrays.printTwoDimArray(twoDimArray);
+        MultidimensionalArrays.printMatrixDiagonals();
 
 
     }
