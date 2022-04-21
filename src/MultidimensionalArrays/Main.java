@@ -38,7 +38,8 @@ public class Main {
 //        MultidimensionalArrays.reverseElements(twoDimArray);
 //        MultidimensionalArrays.printTwoDimArray(twoDimArray);
 
-        MultidimensionalArrays.printMatrixDiagonals();
+//        MultidimensionalArrays.printMatrixDiagonals();
+        MultidimensionalArrays.swapMatrixColumn();
 
 
     }

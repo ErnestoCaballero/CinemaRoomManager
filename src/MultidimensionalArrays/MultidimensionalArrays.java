@@ -244,4 +244,34 @@ public class MultidimensionalArrays {
         }
     }
 
+    /*
+    SWAP THE COLUMN
+    Given a two-dimensional array (matrix) and the two numbers: i and j. Swap the columns with indexes i and j
+    within the matrix.
+
+    Input contains matrix dimensions n and m, not exceeding 100, then the elements of the matrix, then
+    the indexes i and j.
+     */
+
+    public static void swapMatrixColumn() {
+        Scanner scanner = new Scanner(System.in);
+        int[][] matrix = new int[scanner.nextInt()][scanner.nextInt()];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        int swp1 = scanner.nextInt();
+        int swp2 = scanner.nextInt();
+
+        for (int i = 0; i < matrix.length; i++) {
+            int hold = matrix[i][swp1];
+            matrix[i][swp1] = matrix[i][swp2];
+            matrix[i][swp2] = hold;
+        }
+
+        printTwoDimArray(matrix);
+    }
+
 }
