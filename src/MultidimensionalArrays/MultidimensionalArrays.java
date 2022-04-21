@@ -180,9 +180,23 @@ public class MultidimensionalArrays {
     1 1
     3 3
      */
-    static void printCorner(int[][] arr) {
+    public static void printCorner(int[][] arr) {
         System.out.print(arr[0][0] + " " + arr[0][arr[0].length - 1] + "\n");
         System.out.println(arr[arr.length - 1][0] + " " + arr[arr.length - 1][arr[arr.length -1].length - 1]);
     }
+
+    /*
+    REVERSE ELEMENTS
+    In this task, you need to implement reverseElements method.
+    It should reverse all rows of the twoDimArray as in the example below.
+
+    0 0 9 9              9 9 0 0
+    1 2 3 4 will become: 4 3 2 1
+    5 6 7 8              8 7 6 5
+    It is guaranteed that twoDimArray has at least 1 row.
+
+    P.S. You don't need to print anything in this task.
+     */
+
 
 }
