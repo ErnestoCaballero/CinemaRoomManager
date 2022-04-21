@@ -1,5 +1,6 @@
 package MultidimensionalArrays;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MultidimensionalArrays {
@@ -198,5 +199,19 @@ public class MultidimensionalArrays {
     P.S. You don't need to print anything in this task.
      */
 
+    public static void reverseElements(int[][] twoDimArray) {
+        for (int[] arr : twoDimArray) {
+            reverseArray(arr);
+        }
+    }
+
+    public static void reverseArray(int[] input) {
+        int hold;
+        for (int i = 0; i < input.length / 2; i++) {
+            hold = input[i];
+            input[i] = input[input.length - 1 - i];
+            input[input.length - 1 - i] = hold;
+        }
+    }
 
 }
