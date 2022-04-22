@@ -312,4 +312,84 @@ public class MultidimensionalArrays {
         printTwoDimArray(matrix);
     }
 
+    /*
+    CINEMA
+    The cinema has n rows, each row consists of m seats (n and m do not exceed 20).
+    A two-dimensional matrix stores the information on the sold tickets:
+    the number 1 means that the ticket for this place is already sold, and the number 0 means that the place is available.
+    You want to buy k tickets to neighboring seats in the same row. Find whether it can be done.
+
+    Input data format
+
+    On the input, the program gets the number of n rows and m seats.
+    Then, there are n lines, each containing m numbers (0 or 1) separated by spaces. The last line contains the number k.
+
+    Output data format
+
+    The program should output the number of the row with k consecutive available seats.
+    If there are several rows with k available seats, output the first row with these seats.
+    If there is no such a row, output the number 0.
+
+    Sample Input 1:
+    3 4
+    0 1 0 1
+    1 1 0 1
+    1 0 0 1
+    2
+
+    Sample Output 1:
+    3
+
+    Sample Input 2:
+    3 3
+    0 1 0
+    1 0 0
+    1 1 1
+    3
+
+    Sample Output 2:
+    0
+     */
+
+    public static void cinemaAvailability() {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+        int[][] matrix = new int[n][m];
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        int k = scanner.nextInt();
+        int maxCount = 0;
+        int counter = 0;
+        int[] maxPerRow = new int[n];
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == 0) {
+                    counter++;
+                    maxCount = Math.max(counter, maxCount);
+                } else {
+                    counter = 0;
+                }
+            }
+            maxPerRow[i] = maxCount;
+            counter = 0;
+            maxCount = 0;
+        }
+
+        for (int i = 0; i < maxPerRow.length; i++) {
+            if (maxPerRow[i] >= k) {
+                System.out.println(i + 1);
+                return;
+            }
+        }
+
+        System.out.println(0);
+    }
+
 }

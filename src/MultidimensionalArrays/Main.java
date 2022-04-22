@@ -41,7 +41,8 @@ public class Main {
 //        MultidimensionalArrays.printMatrixDiagonals();
 //        MultidimensionalArrays.swapMatrixColumn();
 
-        MultidimensionalArrays.printStarFigure();
+//        MultidimensionalArrays.printStarFigure();
+        MultidimensionalArrays.cinemaAvailability();
 
     }
 }
