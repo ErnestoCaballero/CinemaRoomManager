@@ -14,10 +14,28 @@ public class Main {
 
         CinemaRoom cinemaRoom = new CinemaRoom(rows, seats);
 
-        cinemaRoom.printCinemaRoom();
+        while(true) {
+            int option = printInitialMenu(scanner);
 
-        cinemaRoom.selectSeat(scanner);
+            switch (option) {
+                case 0:
+                    return;
+                case 1:
+                    cinemaRoom.printCinemaRoom();
+                    break;
+                case 2:
+                    cinemaRoom.selectSeat(scanner);
+                    break;
+                default:
+                    break;
+            }
+        }
 
+    }
+
+    static int printInitialMenu(Scanner scanner) {
+        System.out.println("\n1. Show the seats\n2. Buy a ticket\n0. Exit");
+        return scanner.nextInt();
     }
 
     static void incomeCalculator() {
@@ -120,30 +138,12 @@ public class Main {
                 ticketPrice = 8;
             }
 
-            System.out.println("\nTicket price: $" + ticketPrice);
-
-            printCinemaRoom();
+            System.out.println("Ticket price: $" + ticketPrice);
 
         }
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
