@@ -119,7 +119,7 @@ public class Main {
                 selectedSeat = scanner.nextInt();
 
 
-                if (selectedRow > rows - 1 || selectedSeat > seats - 1 || selectedRow < 0 || selectedSeat < 0) {
+                if (selectedRow > rows || selectedSeat > seats || selectedRow < 0 || selectedSeat < 0) {
                     System.out.println("\nWrong input!");
                 } else if ("B".equals(room[selectedRow - 1][selectedSeat - 1])) {
                     System.out.println("\nThat ticket has already been purchased!");
