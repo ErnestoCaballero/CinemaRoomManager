@@ -26,15 +26,17 @@ public class Main {
                 case 2:
                     cinemaRoom.selectSeat(scanner);
                     break;
+                case 3:
+                    cinemaRoom.printStatistics();
+                    break;
                 default:
                     break;
             }
         }
-
     }
 
     static int printInitialMenu(Scanner scanner) {
-        System.out.println("\n1. Show the seats\n2. Buy a ticket\n0. Exit");
+        System.out.println("\n1. Show the seats\n2. Buy a ticket\n3. Statistics\n0. Exit");
         return scanner.nextInt();
     }
 
@@ -66,6 +68,8 @@ public class Main {
     static class CinemaRoom {
         int rows;
         int seats;
+        int purchasedTickets;
+        int currentIncome;
         String[][] room;
         roomType type;
 
@@ -125,10 +129,25 @@ public class Main {
         }
 
         public void selectSeat(Scanner scanner) {
-            System.out.println("\nEnter a row number:");
-            int selectedRow = scanner.nextInt();
-            System.out.println("Enter a seat number in that row:");
-            int selectedSeat = scanner.nextInt();
+            int selectedRow;
+            int selectedSeat;
+
+            while(true) {
+                System.out.println("\nEnter a row number:");
+                selectedRow = scanner.nextInt();
+                System.out.println("Enter a seat number in that row:");
+                selectedSeat = scanner.nextInt();
+
+
+                if (selectedRow > rows - 1 || selectedSeat > seats - 1 || selectedRow < 0 || selectedSeat < 0) {
+                    System.out.println("\nWrong input!");
+                } else if ("B".equals(room[selectedRow - 1][selectedSeat - 1])) {
+                    System.out.println("\nThat ticket has already been purchased!");
+                } else {
+                    break;
+                }
+
+            }
 
             room[selectedRow - 1][selectedSeat - 1] = "B";
 
@@ -138,8 +157,26 @@ public class Main {
                 ticketPrice = 8;
             }
 
-            System.out.println("Ticket price: $" + ticketPrice);
+            System.out.println("\nTicket price: $" + ticketPrice);
 
+            purchasedTickets++;
+            currentIncome += ticketPrice;
+
+        }
+
+        public void printStatistics() {
+            final int seatPrice = 10;
+            float percentage = this.purchasedTickets * 100 / (float) (this.seats * this.rows);
+            int totalIncome = this.type == roomType.NORMAL
+                    ? rows * seats * seatPrice
+                    : seats * ((rows / 2) * seatPrice + (rows - (rows / 2)) * (seatPrice - 2));
+
+            System.out.printf("%nNumber of purchased tickets: %d%nPercentage: %.2f%%%nCurrent income: $%d%nTotal income: $%d%n", this.purchasedTickets, percentage, this.currentIncome, totalIncome);
+
+//            System.out.println("\nNumber of purchased tickets: " + this.purchasedTickets);
+//            System.out.printf("Percentage: %.2f%%%n", percentage);
+//            System.out.println("Current income: $" + this.currentIncome);
+//            System.out.println("Total income: $" + totalIncome);
         }
 
     }
