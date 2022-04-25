@@ -152,11 +152,6 @@ public class Main {
                     : seats * ((rows / 2) * seatPrice + (rows - (rows / 2)) * (seatPrice - 2));
 
             System.out.printf("%nNumber of purchased tickets: %d%nPercentage: %.2f%%%nCurrent income: $%d%nTotal income: $%d%n", this.purchasedTickets, percentage, this.currentIncome, totalIncome);
-
-//            System.out.println("\nNumber of purchased tickets: " + this.purchasedTickets);
-//            System.out.printf("Percentage: %.2f%%%n", percentage);
-//            System.out.println("Current income: $" + this.currentIncome);
-//            System.out.println("Total income: $" + totalIncome);
         }
 
     }
