@@ -40,26 +40,6 @@ public class Main {
         return scanner.nextInt();
     }
 
-    static void incomeCalculator() {
-        Scanner scanner = new Scanner(System.in);
-        final int seatPrice = 10;
-
-        System.out.println("Enter the number of rows: ");
-        int rows = scanner.nextInt();
-        System.out.println("Enter the number of seats in each row: ");
-        int seats = scanner.nextInt();
-        int income;
-
-        if (rows * seats < 60) {
-            income = rows * seats * seatPrice;
-        } else {
-            System.out.println("Enter more than 60");
-            income = seats * ((rows / 2) * seatPrice + (rows - (rows / 2)) * (seatPrice - 2));
-        }
-
-        System.out.println("Total income: \n$" + income);
-    }
-
     enum roomType {
         NORMAL,
         BIG
