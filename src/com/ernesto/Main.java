@@ -44,6 +44,7 @@ public class Main {
         NORMAL,
         BIG
     }
+    
 
     static class CinemaRoom {
         int rows;
